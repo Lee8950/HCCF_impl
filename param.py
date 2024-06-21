@@ -1,0 +1,21 @@
+import argparse
+
+def get_arg():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--learning_rate", type=float, default=1e-3)
+    parser.add_argument("--hyperedges", type=int, default=128)
+    parser.add_argument("--gnn_layers", type=int, default=2)
+    parser.add_argument("--dataset", type=str, default="yelp")
+    parser.add_argument("--train", help="train from scratch")
+    parser.add_argument("--batch_size", type=int, default=4096)
+    parser.add_argument("--temperture", type=float, default=0.1)
+    parser.add_argument("--keep_rate", type=float, default=0.5)
+    parser.add_argument("--ssl", type=float, default=0.2)
+    parser.add_argument("--reg", type=float, default=0)
+    parser.add_argument("--epoch", type=int, default=100)
+    parser.add_argument("--test_batch", type=int, default=256)
+    parser.add_argument("--topk", type=int, default=20)
+    parser.add_argument("--training_per_eval", type=int, default=3)
+    parser.add_argument("--weight_decay", type=float, default=0.96)
+    return parser.parse_args()
+args = get_arg()
